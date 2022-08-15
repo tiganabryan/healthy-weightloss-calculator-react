@@ -22,8 +22,8 @@ const Test = () => {
 
     // let standardInputs: Array<{ age: number, height: string }> = []
 
-    standardInputs.push({age: 20})
-    log(standardInputs)
+        // standardInputs.push({age: 20})
+        // log(standardInputs)
   
 
     // standardInputs[0] = 21

@@ -22,9 +22,9 @@ const Test = () => {
     //         weight: number
     //     }
     const [inputs, setInputs] = useState<any>([
-    {age: 0},
-    {height: 0},
-    {weight: 0}
+    // {age: 0},
+    // {height: 0},
+    // {weight: 0}
   ]);
 
   return (
@@ -32,7 +32,8 @@ const Test = () => {
         <label>test</label>
         <input type="text" value={age} placeholder='test' onChange={(e) => {
             setAge(e.target.value)
-            // setInputs({age:})
+            setInputs(inputs.push(age))
+            console.log(setInputs)
             }} />
     </div>
   )

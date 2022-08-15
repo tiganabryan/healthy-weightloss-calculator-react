@@ -25,27 +25,31 @@ import { useState } from 'react';
   
   export default function Form() {
 
-    const [userInput, setUserInput] = useState({
-      age: 0,
-      height: 0,
-      weight: 0,
-      activityLevel: 0,
-      dietLength: 0,
-      bmr: 0,
-      tdee: 0,
-    })
+    const userInput = [
+      {age: 0},
+      {height: 0},
+      {weight: 0},
+      {activityLevel: 0},
+      {dietLength: 0},
+      {bmr: 0},
+      {tdee: 0},
+    ]
 
-    interface userInput {
-      age: number,
-      height: number,
-      weight: number,
-      activityLevel: number,
-      dietLength: number,
-      bmr: number,
-      tdee: number,
+    // interface userInput {
+    //   age: number,
+    //   height: number,
+    //   weight: number,
+    //   activityLevel: number,
+    //   dietLength: number,
+    //   bmr: number,
+    //   tdee: number,
+    // }
+
+    const addInput = (input: any) => {
+      const id = Math.floor(Math.random() * 10000) + 1
+      const newInput = { id, ...input }
+      
     }
-
-    
 
     return (
     <React.Fragment>

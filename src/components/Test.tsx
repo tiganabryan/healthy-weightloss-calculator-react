@@ -8,13 +8,26 @@ const Test = () => {
     //     weight: number
     // }
 
-    // inputs = {
-    //     age: 20,
-    //     height: 155,
-    //     weight: 105
-    // }
+    let standardInputs = [
+      // {age: 20},
+      // {height: 155},
+      // {weight: 105}
+    ]
 
-    const [age, setAge] = useState('')
+    // let standardInputs: { age: number, height: number, weight: number }[] = [
+    //   { age: 0 },
+    //   { height: 1 },
+    //   { weight: 2 }
+    // ];
+
+    // let standardInputs: Array<{ age: number, height: string }> = []
+
+    standardInputs.push({age: 20})
+    log(standardInputs)
+  
+
+    // standardInputs[0] = 21
+
 
     // let [inputs, setInputs]: {
     //         age: number,
@@ -27,6 +40,8 @@ const Test = () => {
     // {weight: 0}
   ]);
 
+  const [age, setAge] = useState('')
+
   return (
     <div>
         <label>test</label>
@@ -35,6 +50,7 @@ const Test = () => {
             setInputs(inputs.push(age))
             console.log(setInputs)
             }} />
+          <p>{age}</p>
     </div>
   )
 }

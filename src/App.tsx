@@ -41,7 +41,7 @@ export const App = () => (
 
         <Header />
         <Form />
-        {/* <Test /> */}
+        <Test />
 
       </Stack>
     </Center>

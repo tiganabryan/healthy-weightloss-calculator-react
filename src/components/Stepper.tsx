@@ -44,6 +44,7 @@ export const Stepper = () => {
                 {steps.map(({ label, form }, index) => (
                 <Step label={label} key={label}>
                     {form}
+                    {/* <Contents /> */}
                 </Step>
                 ))}
             </Steps>

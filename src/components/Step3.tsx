@@ -50,6 +50,7 @@ const Step3 = () => {
     }
 
     const [caloriesArray, setCaloriesArray] = useState<number[]>([])
+    const dietLengthArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
 
     useEffect(() => {
@@ -60,14 +61,13 @@ const Step3 = () => {
     useEffect(() => {
         console.log(dietLength)
         console.log(dietLengthArray)
-    }, [dietLength])
+    }, [dietLengthArray, dietLength])
 
     useEffect(() => {
         console.log(caloriesArray)
     }, [caloriesArray])
     
     
-    const dietLengthArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
     const handleSubmit = (event: any) => {
         event.preventDefault()
@@ -89,13 +89,15 @@ const Step3 = () => {
                     </NumberInput>
                 </Stack>
         </Stack>
+
         <div style={gridStyle} >
 
             {dietLength > 0 && dietLengthArray.map((day) => {
                 return (
                     <Input key={day} type="number" placeholder={`day ${day}`} style={intakeInputStyle}  
                     onChange={(e) => {
-                        setCaloriesArray([...caloriesArray, Number(e.target.value)])
+                        // setCaloriesArray([...caloriesArray, Number(e.target.value)])
+                        // collect input on submit instead
                     }} size='lg' />
                 )
                 }) 

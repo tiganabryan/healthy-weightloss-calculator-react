@@ -1,40 +1,37 @@
 import React, { useEffect, useState } from 'react'
 
-const log = console.log
 const Test = () => {
-    // let inputs: {
-    //     age: number,
-    //     height: number,
-    //     weight: number
-    // }
 
-    // inputs = {
-    //     age: 20,
-    //     height: 155,
-    //     weight: 105
-    // }
+  const [buttonText, setButtonText] = useState('light')
+  const [toggle, setToggle] = useState(false)
+  const [background, setBackground] = useState('white')
 
-    const [age, setAge] = useState('')
+  const buttonStyle = {
+    borderWidth: '2px',
+    borderColor: toggle ? 'black' : 'grey',
+    borderRadius: '13px',
+    padding: '7px',
+    marginBottom: '1rem'
+  }
 
-    // let [inputs, setInputs]: {
-    //         age: number,
-    //         height: number,
-    //         weight: number
-    //     }
-    const [inputs, setInputs] = useState<any>([
-    // {age: 0},
-    // {height: 0},
-    // {weight: 0}
-  ]);
+  useEffect(() => {
+    if (!toggle) {
+      setButtonText('switch to shadow mode');
+      setBackground('white');
+
+    } else {
+        setButtonText('switch to light mode');
+        setBackground('LightGray');
+      }
+      
+  }, [toggle])
+  
+  document.body.style.backgroundColor = background
+ 
 
   return (
     <div>
-        <label>test</label>
-        <input type="text" value={age} placeholder='test' onChange={(e) => {
-            setAge(e.target.value)
-            setInputs(inputs.push(age))
-            console.log(setInputs)
-            }} />
+      <button id='btn' onClick={() => setToggle(!toggle)} style={buttonStyle}>{buttonText}</button>
     </div>
   )
 }

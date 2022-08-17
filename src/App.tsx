@@ -17,7 +17,6 @@ import Header from './components/Header';
 import Form from './components/Form'
 import { Stepper } from './components/Stepper'
 import { useState } from "react";
-import Test from "./components/Test";
 
 const log = console.log
 
@@ -41,7 +40,6 @@ export const App = () => (
 
         <Header />
         <Form />
-        {/* <Test /> */}
 
       </Stack>
     </Center>

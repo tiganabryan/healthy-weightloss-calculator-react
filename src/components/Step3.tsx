@@ -67,7 +67,7 @@ const Step3 = () => {
         <div>
             {dietLengthArray.map((day) => {
                 return (
-                    <Input key={day} type="number" placeholder='intake' style={intakeInputStyle}  
+                    <Input key={day} type="number" placeholder={`day ${day}`} style={intakeInputStyle}  
                     onChange={(e) => setIntake(Number(e))} size='lg' />
                 )
             })}

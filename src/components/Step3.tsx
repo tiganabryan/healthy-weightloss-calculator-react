@@ -42,12 +42,12 @@ const Step3 = () => {
     }, [inputs])
 
 
-    const intakes = [intake]
-
     useEffect(() => {
-        console.log(intakes)
-    }, [intakes])
+        console.log(dietLength)
+        console.log(intakesArray)
+    }, [dietLength])
     
+    const intakesArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
     
   return (

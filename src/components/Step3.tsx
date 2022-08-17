@@ -26,7 +26,12 @@ import DatePicker from 'react-date-picker'
 
 const Step3 = () => {
 
+    const intakeInputStyle = {
+        margin: '1rem 0rem'
+    }
+
     const [dietLength, setDietLength] = useState(0)
+    const [intake, setIntake] = useState(0)
 
     const inputs = {
         dietLength: dietLength,
@@ -36,13 +41,20 @@ const Step3 = () => {
         console.log(inputs)
     }, [inputs])
 
+
+    const intakes = [intake]
+
+    useEffect(() => {
+        console.log(intakes)
+    }, [intakes])
+    
+
     
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>
         <Stack spacing={3}>
-            <Text>diet length</Text>
+            <label>diet length</label>
                 <Stack spacing={5}>
-
                     <NumberInput size='lg' maxW={32} min={1} onChange={(e) => setDietLength(Number(e))}>
                         <NumberInputField />
                         <NumberInputStepper>
@@ -50,10 +62,11 @@ const Step3 = () => {
                         <NumberDecrementStepper />
                         </NumberInputStepper>
                     </NumberInput>
-                    
                 </Stack>
-
         </Stack>
+        <div>
+            {dietLength > 0 && <Input type="number" placeholder='intake' style={intakeInputStyle}  onChange={(e) => setIntake(Number(e))} size='lg' />}
+        </div>
     </Box>
   )
 }

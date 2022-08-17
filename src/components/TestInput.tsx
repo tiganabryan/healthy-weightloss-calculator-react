@@ -22,9 +22,15 @@ const TestInput = () => {
         height: height
     }
 
+    
+
+
     useEffect(() => {
         console.log(inputs)
+        console.log(inputs.age + inputs.height)
     }, [inputs])
+
+
 
     
 

@@ -53,7 +53,7 @@ const Step3 = () => {
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>
         <Stack spacing={3}>
-            <label>diet length</label>
+            <label>diet length (days)</label>
                 <Stack spacing={5}>
                     <NumberInput size='lg' maxW={32} min={1} onChange={(e) => setDietLength(Number(e))}>
                         <NumberInputField />
@@ -65,12 +65,13 @@ const Step3 = () => {
                 </Stack>
         </Stack>
         <div>
-            {dietLengthArray.map((day) => {
+            {dietLength ? dietLengthArray.map((day) => {
                 return (
                     <Input key={day} type="number" placeholder={`day ${day}`} style={intakeInputStyle}  
                     onChange={(e) => setIntake(Number(e))} size='lg' />
                 )
-            })}
+            }) : <Text padding='1rem 0rem'>at least one day must be given for the calculator to work.</Text>
+        }
         </div>
     </Box>
   )

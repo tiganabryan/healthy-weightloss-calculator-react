@@ -15,7 +15,12 @@ const TestInput = () => {
     const [age, setAge] = useState(0)
     const [height, setHeight] = useState(0)
 
-    const inputs = [age, height]
+    // const inputs = [age, height]
+
+    const inputs = {
+        age: age,
+        height: height
+    }
 
     useEffect(() => {
         console.log(inputs)

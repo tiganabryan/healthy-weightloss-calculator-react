@@ -36,7 +36,6 @@ const Step1 = () => {
 
   useEffect(() => {
       console.log(inputs)
-      console.log(inputs)
   }, [inputs])
 
   return (

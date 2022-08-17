@@ -1,0 +1,3 @@
+first create objects across each step, get calculations working
+then consolidate the 3 objects into one and drill it down to each step component for updating
+keep input in text field even after step is complete, only clear upon form completion

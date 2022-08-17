@@ -8,20 +8,25 @@ const TestInput = () => {
     borderColor: 'lavender',
     borderRadius: '9px',
     padding: '7px',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    display: 'block'
     }
 
     const [age, setAge] = useState(0)
+    const [height, setHeight] = useState(0)
+
+    const inputs = [age, height]
 
     useEffect(() => {
         console.log(inputs)
-    }, [age])
+    }, [inputs])
 
-    const inputs = [age]
+    
 
   return (
     <div>
         <input style={inputStyle} type="number" placeholder='age' onChange={(e) => setAge(Number(e.target.value))}  />
+        <input style={inputStyle} type="number" placeholder='height(cm)' onChange={(e) => setHeight(Number(e.target.value))}  />
     </div>
   )
 }

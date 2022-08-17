@@ -14,7 +14,6 @@ const TestInput = () => {
     const [age, setAge] = useState(0)
 
     useEffect(() => {
-        setAge(age)
         console.log(inputs)
     }, [age])
 

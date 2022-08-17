@@ -44,10 +44,10 @@ const Step3 = () => {
 
     useEffect(() => {
         console.log(dietLength)
-        console.log(intakesArray)
+        console.log(dietLengthArray)
     }, [dietLength])
     
-    const intakesArray = Array.from({length: dietLength}, (_, i) => i + 1)
+    const dietLengthArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
     
   return (
@@ -65,7 +65,12 @@ const Step3 = () => {
                 </Stack>
         </Stack>
         <div>
-            {dietLength > 0 && <Input type="number" placeholder='intake' style={intakeInputStyle}  onChange={(e) => setIntake(Number(e))} size='lg' />}
+            {dietLengthArray.map((day) => {
+                return (
+                    <Input key={day} type="number" placeholder='intake' style={intakeInputStyle}  
+                    onChange={(e) => setIntake(Number(e))} size='lg' />
+                )
+            })}
         </div>
     </Box>
   )

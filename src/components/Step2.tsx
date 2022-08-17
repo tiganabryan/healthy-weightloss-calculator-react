@@ -20,7 +20,7 @@ import Form from './Form'
 
 const Step2 = () => {
 
-    const [activityLevel, setActivityLevel] = useState('')
+    const [activityLevel, setActivityLevel] = useState(0)
 
     const inputs = {
         activityLevel: activityLevel,
@@ -36,7 +36,7 @@ const Step2 = () => {
         <form>
         <Stack spacing={3}>
             <Text>next, how active are you?</Text>
-            <RadioGroup onChange={(e) => setActivityLevel(e)}>
+            <RadioGroup onChange={(e) => setActivityLevel(Number(e))}>
                 <Stack spacing={5}>
 
                     <Radio value='1.1'>

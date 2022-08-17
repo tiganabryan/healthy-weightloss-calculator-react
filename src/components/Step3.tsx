@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
     Flex,
     Heading,
@@ -26,47 +26,34 @@ import DatePicker from 'react-date-picker'
 
 const Step3 = () => {
 
-    const [numberCalories, setnumberCalories] = useState([2000, 1500])
+    const [dietLength, setDietLength] = useState(0)
 
-    // const onSubmit = ({ event }: {event : string}) => {
-    //     event.preventDefault()
+    const inputs = {
+        dietLength: dietLength,
+    }
 
-    //     if(!numberCalories) {
-    //         alert('add at least one day, love.')
-    //         return
-    //     }
+    useEffect(() => {
+        console.log(inputs)
+    }, [inputs])
 
-    //     // onAdd({ numberCalories })
-
-    //     const newIntake = 1300
-
-    //     setnumberCalories([...numberCalories, newIntake])
-    // }
+    
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>
-        <form>
         <Stack spacing={3}>
             <Text>diet length</Text>
                 <Stack spacing={5}>
 
-                    <form 
-                    // onSubmit={onSubmit} // pass onSubmit as prop
-                    >
-                    <NumberInput size='lg' maxW={32} defaultValue={10} min={1}
-                    //  onChange={(event) => setnumberCalories(event.target.value)}
-                     >
+                    <NumberInput size='lg' maxW={32} min={1} onChange={(e) => setDietLength(Number(e))}>
                         <NumberInputField />
                         <NumberInputStepper>
                         <NumberIncrementStepper />
                         <NumberDecrementStepper />
                         </NumberInputStepper>
                     </NumberInput>
-                    </form>
                     
                 </Stack>
 
         </Stack>
-        </form>
     </Box>
   )
 }

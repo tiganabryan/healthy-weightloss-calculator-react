@@ -63,9 +63,9 @@ import { useState, useEffect } from 'react';
   }
 
   calculations = {
-      bmrCalculation: bmr,
-      tdeeCalculation: tdee,
-      weightlossCalculation: weightloss
+    bmrCalculation: bmr,
+    tdeeCalculation: tdee,
+    weightlossCalculation: weightloss
   }
 
   const { bmrCalculation, tdeeCalculation, weightlossCalculation } = calculations
@@ -74,7 +74,7 @@ import { useState, useEffect } from 'react';
     return (
     <React.Fragment>
         <Stepper 
-        // weightloss={3} unit='kg' 
+        weightlossCalculation={weightlossCalculation} unit='kg' 
         dietLengthInput={dietLengthInput} 
         // userInput={userInput} 
         // setUserInput={setUserInput}

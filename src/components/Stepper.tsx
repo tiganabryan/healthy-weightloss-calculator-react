@@ -31,7 +31,7 @@ const steps = [
 //     tdee: number,
 //   }
 
-export const Stepper = ({dietLengthInput}: {dietLengthInput: number}) => {
+export const Stepper = ({dietLengthInput, weightlossCalculation, unit}: {dietLengthInput: number, weightlossCalculation: number, unit: string}) => {
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
   })
@@ -56,11 +56,7 @@ export const Stepper = ({dietLengthInput}: {dietLengthInput: number}) => {
                     {activeStep === steps.length ? (
                         <Flex px={4} py={4} width="100%" flexDirection="column">
                         <Heading fontSize="xl" textAlign="center">
-                            you will lose 
-                            {/* {weightloss}{unit}  */}
-                            in 
-                            {dietLengthInput} 
-                            days.
+                            you will lose {weightlossCalculation}{unit} in {dietLengthInput} days.
                         </Heading>
                         <Button mx="auto" mt={6} size="md" onClick={reset}>
                             reset

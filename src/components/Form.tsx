@@ -32,8 +32,8 @@ export default function Form() {
   const [activityLevel, setActivityLevel] = useState(0)
   const [dietLength, setDietLength] = useState(0)
 
-  const [bmr, setBmrCalculation] = useState(0)
-  const [tdee, setTdeeCalculation] = useState(0)
+  const [bmr, setBmr] = useState(0)
+  const [tdee, setTdee] = useState(0)
   const [weightloss, setWeightloss] = useState(0)
 
   const inputs = {
@@ -45,7 +45,7 @@ export default function Form() {
     dietLengthInput: dietLength
   }
 
-  interface inputs {
+  type inputs = {
     ageInput: number, 
     heightInput: number, 
     weightInput: number, 
@@ -59,38 +59,51 @@ export default function Form() {
   const { ageInput, heightInput, weightInput, genderInput, activityLevelInput, dietLengthInput } = inputs
 
 
-  let calculations: {
-    bmrCalculation: number,
-    tdeeCalculation: number,
-    weightlossCalculation: number
-  }
+  
 
-  calculations = {
+  const calculations = {
     bmrCalculation: bmr,
     tdeeCalculation: tdee,
     weightlossCalculation: weightloss
   }
 
+  type calculations = {
+    bmrCalculation: number,
+    tdeeCalculation: number,
+    weightlossCalculation: number,
+  }
+  
+
   const { bmrCalculation, tdeeCalculation, weightlossCalculation } = calculations
 
 
   const bmrFormula = (weight: number, height: number, age: number) => {
-    return (9.99 * weight + 6.25 * height) - (4.92 * age) - 161
+    return ((9.99 * weight + 6.25 * height) - (4.92 * age) - 161)
   }
 
   const tdeeFormula = (bmr: number, activityLevel: number): number => {
-    return bmr * activityLevel
+    return (bmr * activityLevel)
   }
 
   let userBmr = bmrFormula(weight, height, age)
   let userTdee = tdeeFormula(userBmr, activityLevel)
 
+  useEffect(() => {
+    setBmr(userBmr)
+    console.log(bmr)
+  }, [weight, height, age])
+
     return (
     <React.Fragment>
         <Stepper 
-        weightlossCalculation={weightlossCalculation} unit='kg' 
+        weightlossCalculation={weightlossCalculation}
+        unit='kg' 
         dietLengthInput={dietLengthInput}
-        inputs={inputs} 
+        inputs={inputs}
+        setAge={setAge}
+        setHeight={setHeight}
+        setWeight={setWeight}
+        setGender={setGender} 
         // userInput={userInput} 
         // setUserInput={setUserInput}
           />

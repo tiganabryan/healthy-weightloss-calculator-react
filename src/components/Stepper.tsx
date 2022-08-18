@@ -21,17 +21,23 @@ const steps = [
     { label: "step 3", form: <Step3 /> }
 ]
 
-// interface userInput {
-//     age: number,
-//     height: number,
-//     weight: number,
-//     activityLevel: number,
-//     dietLength: number,
-//     bmr: number,
-//     tdee: number,
+
+// interface inputsProps {
+//     ageInput: number, 
+//     heightInput: number, 
+//     weightInput: number, 
+//     genderInput: string,
+//     activityLevelInput: number,
+//     dietLengthInput: number,
 //   }
 
-export const Stepper = ({dietLengthInput, weightlossCalculation, unit, inputs}: {dietLengthInput: number, weightlossCalculation: number, unit: string, inputs: {}}) => {
+//   interface calculationsProps {
+//     bmrCalculation: number,
+//     tdeeCalculation: number,
+//     weightlossCalculation: number
+//   }
+
+export const Stepper = (props:any) => {
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
   })
@@ -43,7 +49,13 @@ export const Stepper = ({dietLengthInput, weightlossCalculation, unit, inputs}: 
             <Steps onClickStep={(step) => setStep(step)} activeStep={activeStep}>
                 {steps.map(({ label, form }, index) => (
                 <Step label={label} key={label}>
-                    {form}
+                    {/* {form} */}
+                    <Step1 
+                    setAge={props.setAge}
+                    setHeight={props.setHeight}
+                    setWeight={props.setWeight}
+                    setGender={props.setGender}
+                    />
                     {/* <Contents /> */}
                 </Step>
                 ))}
@@ -56,7 +68,7 @@ export const Stepper = ({dietLengthInput, weightlossCalculation, unit, inputs}: 
                     {activeStep === steps.length ? (
                         <Flex px={4} py={4} width="100%" flexDirection="column">
                         <Heading fontSize="xl" textAlign="center">
-                            you will lose {weightlossCalculation}{unit} in {dietLengthInput} days.
+                            you will lose {props.weightlossCalculation}{props.unit} in {props.dietLengthInput} days.
                         </Heading>
                         <Button mx="auto" mt={6} size="md" onClick={reset}>
                             reset

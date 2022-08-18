@@ -19,34 +19,34 @@ import Form from './Form'
 
 
 
-const Step1 = () => {
+const Step1 = (props:any) => {
 
-  const [age, setAge] = useState(0)
-  const [height, setHeight] = useState(0)
-  const [weight, setWeight] = useState(0)
-  const [gender, setGender] = useState('female')
+//   const [age, setAge] = useState(0)
+//   const [height, setHeight] = useState(0)
+//   const [weight, setWeight] = useState(0)
+//   const [gender, setGender] = useState('female')
 
-  const inputs = {
-      age: age,
-      height: height,
-      weight: weight,
-      gender: gender
-  }
+//   const inputs = {
+//       age: age,
+//       height: height,
+//       weight: weight,
+//       gender: gender
+//   }
 
 
-  useEffect(() => {
-      console.log(inputs)
-  }, [inputs])
+//   useEffect(() => {
+//       console.log(inputs)
+//   }, [inputs])
 
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>
         <form>
         <Stack spacing={3}>
-            <Input type="number" placeholder='age' onChange={(e) => setAge(Number(e.target.value))} size='lg' />
-            <Input type="number" placeholder='height' onChange={(e) => setHeight(Number(e.target.value))} size='lg' />
-            <Input type="number" placeholder='weight' onChange={(e) => setWeight(Number(e.target.value))} size='lg' />
+            <Input type="number" placeholder='age' onChange={(e) => props.setAge(Number(e.target.value))} size='lg' />
+            <Input type="number" placeholder='height' onChange={(e) => props.setHeight(Number(e.target.value))} size='lg' />
+            <Input type="number" placeholder='weight' onChange={(e) => props.setWeight(Number(e.target.value))} size='lg' />
 
-            <Select placeholder='gender' onChange={(e) => setGender(e.target.value)} size='lg'>
+            <Select placeholder='gender' onChange={(e) => props.setGender(e.target.value)} size='lg'>
                 <option value='male'>male</option>
                 <option value='female'>female</option>
                 <option value='other'>other</option>

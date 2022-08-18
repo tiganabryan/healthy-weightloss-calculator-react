@@ -75,7 +75,7 @@ import { useState, useEffect } from 'react';
     <React.Fragment>
         <Stepper 
         // weightloss={3} unit='kg' 
-        // dietLength={10} 
+        dietLengthInput={dietLengthInput} 
         // userInput={userInput} 
         // setUserInput={setUserInput}
          />

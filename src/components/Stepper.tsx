@@ -21,17 +21,17 @@ const steps = [
     { label: "step 3", form: <Step3 /> }
 ]
 
-interface userInput {
-    age: number,
-    height: number,
-    weight: number,
-    activityLevel: number,
-    dietLength: number,
-    bmr: number,
-    tdee: number,
-  }
+// interface userInput {
+//     age: number,
+//     height: number,
+//     weight: number,
+//     activityLevel: number,
+//     dietLength: number,
+//     bmr: number,
+//     tdee: number,
+//   }
 
-export const Stepper = () => {
+export const Stepper = ({dietLengthInput}: {dietLengthInput: number}) => {
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
   })
@@ -59,7 +59,7 @@ export const Stepper = () => {
                             you will lose 
                             {/* {weightloss}{unit}  */}
                             in 
-                            {/* {dietLength}  */}
+                            {dietLengthInput} 
                             days.
                         </Heading>
                         <Button mx="auto" mt={6} size="md" onClick={reset}>

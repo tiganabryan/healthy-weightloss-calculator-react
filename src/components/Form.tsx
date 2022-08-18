@@ -37,22 +37,24 @@ import { useState, useEffect } from 'react';
   const [weightloss, setWeightloss] = useState(0)
 
   let inputs: {
-    age: number, 
-    height: number, 
-    weight: number, 
-    gender: string,
-    activityLevel: number,
-    dietLength: number,
+    ageInput: number, 
+    heightInput: number, 
+    weightInput: number, 
+    genderInput: string,
+    activityLevelInput: number,
+    dietLengthInput: number,
   }
 
   inputs = {
-    age: age, 
-    height: height, 
-    weight: weight, 
-    gender: gender,
-    activityLevel: activityLevel,
-    dietLength: dietLength
+    ageInput: age, 
+    heightInput: height, 
+    weightInput: weight, 
+    genderInput: gender,
+    activityLevelInput: activityLevel,
+    dietLengthInput: dietLength
   }
+
+  const { ageInput, heightInput, weightInput, genderInput, activityLevelInput, dietLengthInput } = inputs
 
   let calculations: {
     bmrCalculation: number,
@@ -66,27 +68,8 @@ import { useState, useEffect } from 'react';
       weightloss: weightloss
   }
 
-    // const [userInput, setUserInput] = useState({
-    //   age: 0,
-    //   height: 0,
-    //   weight: 0,
-    //   activityLevel: 0,
-    //   dietLength: 0,
-    //   bmr: 0,
-    //   tdee: 0,
-    // })
 
-    // interface userInput {
-    //   age: number,
-    //   height: number,
-    //   weight: number,
-    //   activityLevel: number,
-    //   dietLength: number,
-    //   bmr: number,
-    //   tdee: number,
-    // }
 
-    
 
     return (
     <React.Fragment>

@@ -31,7 +31,7 @@ const steps = [
 //     tdee: number,
 //   }
 
-export const Stepper = ({dietLengthInput, weightlossCalculation, unit}: {dietLengthInput: number, weightlossCalculation: number, unit: string}) => {
+export const Stepper = ({dietLengthInput, weightlossCalculation, unit, inputs}: {dietLengthInput: number, weightlossCalculation: number, unit: string, inputs: {}}) => {
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
   })

@@ -23,7 +23,7 @@ import { useState, useEffect } from 'react';
   
   
   
-  export default function Form() {
+export default function Form() {
 
   const [age, setAge] = useState(0)
   const [height, setHeight] = useState(0)
@@ -36,16 +36,7 @@ import { useState, useEffect } from 'react';
   const [tdee, setTdeeCalculation] = useState(0)
   const [weightloss, setWeightloss] = useState(0)
 
-  let inputs: {
-    ageInput: number, 
-    heightInput: number, 
-    weightInput: number, 
-    genderInput: string,
-    activityLevelInput: number,
-    dietLengthInput: number,
-  }
-
-  inputs = {
+  const inputs = {
     ageInput: age, 
     heightInput: height, 
     weightInput: weight, 
@@ -54,7 +45,19 @@ import { useState, useEffect } from 'react';
     dietLengthInput: dietLength
   }
 
+  interface inputs {
+    ageInput: number, 
+    heightInput: number, 
+    weightInput: number, 
+    genderInput: string,
+    activityLevelInput: number,
+    dietLengthInput: number,
+  }
+
+  
+
   const { ageInput, heightInput, weightInput, genderInput, activityLevelInput, dietLengthInput } = inputs
+
 
   let calculations: {
     bmrCalculation: number,
@@ -71,14 +74,26 @@ import { useState, useEffect } from 'react';
   const { bmrCalculation, tdeeCalculation, weightlossCalculation } = calculations
 
 
+  const bmrFormula = (weight: number, height: number, age: number) => {
+    return (9.99 * weight + 6.25 * height) - (4.92 * age) - 161
+  }
+
+  const tdeeFormula = (bmr: number, activityLevel: number): number => {
+    return bmr * activityLevel
+  }
+
+  let userBmr = bmrFormula(weight, height, age)
+  let userTdee = tdeeFormula(userBmr, activityLevel)
+
     return (
     <React.Fragment>
         <Stepper 
         weightlossCalculation={weightlossCalculation} unit='kg' 
-        dietLengthInput={dietLengthInput} 
+        dietLengthInput={dietLengthInput}
+        inputs={inputs} 
         // userInput={userInput} 
         // setUserInput={setUserInput}
-         />
+          />
     </React.Fragment>
     );
-  }
+}

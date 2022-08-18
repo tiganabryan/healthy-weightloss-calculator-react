@@ -32,8 +32,8 @@ import { useState, useEffect } from 'react';
   const [activityLevel, setActivityLevel] = useState(0)
   const [dietLength, setDietLength] = useState(0)
 
-  const [bmrCalculation, setBmrCalculation] = useState(0)
-  const [tdeeCalculation, setTdeeCalculation] = useState(0)
+  const [bmr, setBmrCalculation] = useState(0)
+  const [tdee, setTdeeCalculation] = useState(0)
   const [weightloss, setWeightloss] = useState(0)
 
   let inputs: {
@@ -59,16 +59,16 @@ import { useState, useEffect } from 'react';
   let calculations: {
     bmrCalculation: number,
     tdeeCalculation: number,
-    weightloss: number
+    weightlossCalculation: number
   }
 
   calculations = {
-      bmrCalculation: bmrCalculation,
-      tdeeCalculation: tdeeCalculation,
-      weightloss: weightloss
+      bmrCalculation: bmr,
+      tdeeCalculation: tdee,
+      weightlossCalculation: weightloss
   }
 
-
+  const { bmrCalculation, tdeeCalculation, weightlossCalculation } = calculations
 
 
     return (

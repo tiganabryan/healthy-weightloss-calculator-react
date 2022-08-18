@@ -31,8 +31,10 @@ import { useState, useEffect } from 'react';
   const [gender, setGender] = useState('female')
   const [activityLevel, setActivityLevel] = useState(0)
   const [dietLength, setDietLength] = useState(0)
+
   const [bmrCalculation, setBmrCalculation] = useState(0)
   const [tdeeCalculation, setTdeeCalculation] = useState(0)
+  const [weightloss, setWeightloss] = useState(0)
 
   let inputs: {
     age: number, 
@@ -41,8 +43,6 @@ import { useState, useEffect } from 'react';
     gender: string,
     activityLevel: number,
     dietLength: number,
-    bmrCalculation: number,
-    tdeeCalculation: number,
   }
 
   inputs = {
@@ -51,9 +51,19 @@ import { useState, useEffect } from 'react';
     weight: weight, 
     gender: gender,
     activityLevel: activityLevel,
-    dietLength: dietLength,
-    bmrCalculation: bmrCalculation,
-    tdeeCalculation: tdeeCalculation,
+    dietLength: dietLength
+  }
+
+  let calculations: {
+    bmrCalculation: number,
+    tdeeCalculation: number,
+    weightloss: number
+  }
+
+  calculations = {
+      bmrCalculation: bmrCalculation,
+      tdeeCalculation: tdeeCalculation,
+      weightloss: weightloss
   }
 
     // const [userInput, setUserInput] = useState({

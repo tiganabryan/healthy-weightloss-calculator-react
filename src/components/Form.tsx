@@ -78,7 +78,7 @@ export default function Form() {
 
 
   const bmrFormula = (weight: number, height: number, age: number) => {
-    return ((9.99 * weight + 6.25 * height) - (4.92 * age) - 161)
+    return (((9.99 * weight + 6.25 * height) - (4.92 * age)) - 161)
   }
 
   const tdeeFormula = (bmr: number, activityLevel: number): number => {

@@ -15,11 +15,7 @@ import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
 
-const steps = [
-    { label: "step 1", form: <Step1 /> }, 
-    { label: "step 2", form: <Step2 /> }, 
-    { label: "step 3", form: <Step3 /> }
-]
+
 
 
 // interface inputsProps {
@@ -38,6 +34,19 @@ const steps = [
 //   }
 
 export const Stepper = (props:any) => {
+
+    const steps = [
+        { label: "step 1", 
+        form: <Step1 
+        setAge={props.setAge}
+        setHeight={props.setHeight}
+        setWeight={props.setWeight}
+        setGender={props.setGender}
+        /> }, 
+        { label: "step 2", form: <Step2 /> }, 
+        { label: "step 3", form: <Step3 /> }
+    ]
+
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
   })
@@ -49,13 +58,8 @@ export const Stepper = (props:any) => {
             <Steps onClickStep={(step) => setStep(step)} activeStep={activeStep}>
                 {steps.map(({ label, form }, index) => (
                 <Step label={label} key={label}>
-                    {/* {form} */}
-                    <Step1 
-                    setAge={props.setAge}
-                    setHeight={props.setHeight}
-                    setWeight={props.setWeight}
-                    setGender={props.setGender}
-                    />
+                    {form}
+                    
                     {/* <Contents /> */}
                 </Step>
                 ))}

@@ -49,7 +49,7 @@ const Step3 = () => {
         dietLength: dietLength,
     }
 
-    const [caloriesArray, setCaloriesArray] = useState<number[]>([])
+    const [caloriesArray, setCaloriesArray] = useState(0)
     const dietLengthArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
 
@@ -69,7 +69,7 @@ const Step3 = () => {
     
     
 
-    const handleSubmit = (event: any) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
     }
     

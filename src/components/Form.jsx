@@ -35,15 +35,15 @@ import { useState } from 'react';
       tdee: 0,
     })
 
-    interface userInput {
-      age: number,
-      height: number,
-      weight: number,
-      activityLevel: number,
-      dietLength: number,
-      bmr: number,
-      tdee: number,
-    }
+    // interface userInput {
+    //   age: number,
+    //   height: number,
+    //   weight: number,
+    //   activityLevel: number,
+    //   dietLength: number,
+    //   bmr: number,
+    //   tdee: number,
+    // }
 
     
 

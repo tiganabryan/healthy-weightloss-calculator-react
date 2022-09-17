@@ -16,7 +16,7 @@ import Step2 from './Step2'
 import Step3 from './Step3'
 
 const steps = [
-    { label: "step 1", form: <Step1 /> }, 
+    { label: "step 1", form: <Step1 userInput={userInput} /> }, 
     { label: "step 2", form: <Step2 /> }, 
     { label: "step 3", form: <Step3 /> }
 ]
@@ -31,7 +31,10 @@ const steps = [
 //     tdee: number,
 //   }
 
-export const Stepper = () => {
+export const Stepper = ( { userInput} ) => {
+
+    const { dietLength, weightloss, unit } = userInput
+
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
   })
@@ -56,11 +59,7 @@ export const Stepper = () => {
                     {activeStep === steps.length ? (
                         <Flex px={4} py={4} width="100%" flexDirection="column">
                         <Heading fontSize="xl" textAlign="center">
-                            you will lose 
-                            {/* {weightloss}{unit}  */}
-                            in 
-                            {/* {dietLength}  */}
-                            days.
+                            you will lose {weightloss}{unit} in {dietLength} days.
                         </Heading>
                         <Button mx="auto" mt={6} size="md" onClick={reset}>
                             reset

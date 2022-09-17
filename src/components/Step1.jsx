@@ -19,7 +19,7 @@ import Form from './Form'
 
 
 
-const Step1 = () => {
+const Step1 = ( { userInput } ) => {
 
   const [age, setAge] = useState(0)
   const [height, setHeight] = useState(0)

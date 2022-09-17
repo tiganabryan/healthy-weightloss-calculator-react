@@ -29,10 +29,12 @@ import { useState } from 'react';
       age: 0,
       height: 0,
       weight: 0,
+      unit: 'kg',
       activityLevel: 0,
       dietLength: 0,
       bmr: 0,
       tdee: 0,
+      weightloss: 0
     })
 
     // interface userInput {
@@ -52,7 +54,7 @@ import { useState } from 'react';
         <Stepper 
         // weightloss={3} unit='kg' 
         // dietLength={10} 
-        // userInput={userInput} 
+        userInput={userInput} 
         // setUserInput={setUserInput}
          />
     </React.Fragment>

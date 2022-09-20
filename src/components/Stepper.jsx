@@ -41,7 +41,10 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
     initialStep: 0,
   })
 
-  userInput.bmr = (gender === 'female') ? 9.99 * weight + (6.25 * height) - (4.92 * age) - 161 : 9.99 * weight + (6.25 * height) - (4.92 * age) + 5
+  userInput.bmr = 
+//   (gender === 'female') ? 
+  (((9.99 * weight + (6.25 * height)) - (4.92 * age)) - 161) 
+//   : 9.99 * weight + (6.25 * height) - (4.92 * age) + 5
 
   userInput.tdee = ((Number(bmr) * Number(activityLevel)) * 10).toFixed(1)
 
@@ -69,7 +72,7 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
                             <br></br>
                             your tdee is {userInput.tdee}.
                             <br></br>
-                            you will lose {weightloss}{unit} in {dietLength} days.
+                            you will lose {weightloss}{unit} in {userInput.dietLength} days.
                             <br></br>
                         </Heading>
                         <Button mx="auto" mt={6} size="md" onClick={reset}>

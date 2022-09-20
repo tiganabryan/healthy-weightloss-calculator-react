@@ -19,12 +19,13 @@ import {
     NumberInputField,
     NumberInputStepper,
     NumberDecrementStepper,
-    NumberIncrementStepper
+    NumberIncrementStepper,
+    useNumberInput
 } from "@chakra-ui/react"
 import Form from './Form'
 import DatePicker from 'react-date-picker'
 
-const Step3 = () => {
+const Step3 = ({userInput}) => {
 
     const gridStyle = {
         display: 'grid',
@@ -49,18 +50,20 @@ const Step3 = () => {
         dietLength: dietLength,
     }
 
+    userInput.dietLength = dietLength
+
+
     const [caloriesArray, setCaloriesArray] = useState(0)
     const dietLengthArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
 
     useEffect(() => {
-        console.log(inputs)
+        console.log(`diet length: ${dietLength}`, userInput)
     }, [inputs])
 
 
     useEffect(() => {
-        console.log(dietLength)
-        console.log(dietLengthArray)
+        console.log(`array of diet days: ${dietLengthArray}`)
     }, [dietLengthArray, dietLength])
 
     useEffect(() => {

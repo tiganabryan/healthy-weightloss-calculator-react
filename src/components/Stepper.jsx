@@ -42,11 +42,11 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
   })
 
   userInput.bmr = 
-//   (gender === 'female') ? 
-  (((9.99 * weight + (6.25 * height)) - (4.92 * age)) - 161) 
-//   : 9.99 * weight + (6.25 * height) - (4.92 * age) + 5
+  (gender === 'female') ? 
+    ((9.99 * weight + 6.25 * height - 4.92 * age) - 161).toFixed(0)
+    : (9.99 * weight + (6.25 * height) - (4.92 * age) + 5).toFixed(0)
 
-  userInput.tdee = ((Number(bmr) * Number(activityLevel)) * 10).toFixed(1)
+  userInput.tdee = ((Number(bmr) * Number(activityLevel))).toFixed(0)
 
   return (
     <React.Fragment>
@@ -68,9 +68,9 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
                     {activeStep === steps.length ? (
                         <Flex px={4} py={4} width="100%" flexDirection="column">
                         <Heading fontSize="xl" textAlign="center">
-                            your bmr is {userInput.bmr}.
+                            your bmr is {userInput.bmr}
                             <br></br>
-                            your tdee is {userInput.tdee}.
+                            your tdee is {userInput.tdee}
                             <br></br>
                             you will lose {weightloss}{unit} in {userInput.dietLength} days.
                             <br></br>

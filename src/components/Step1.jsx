@@ -58,8 +58,8 @@ const Step1 = ( { userInput }, setAge, setHeight, setWeight, setGender ) => {
         <form>
         <Stack spacing={3}>
             <Input type="number" placeholder='age' onChange={(e) => setAgeInput(Number(e.target.value))} size='lg' />
-            <Input type="number" placeholder='height' onChange={(e) => setHeightInput(Number(e.target.value))} size='lg' />
-            <Input type="number" placeholder='weight' onChange={(e) => setWeightInput(Number(e.target.value))} size='lg' />
+            <Input type="number" placeholder='height (cm)' onChange={(e) => setHeightInput(Number(e.target.value))} size='lg' />
+            <Input type="number" placeholder='weight (kg)' onChange={(e) => setWeightInput(Number(e.target.value))} size='lg' />
 
             <Select placeholder='gender' onChange={(e) => setGenderInput(e.target.value)} size='lg'>
                 <option value='male'>male</option>

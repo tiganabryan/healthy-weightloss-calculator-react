@@ -34,7 +34,7 @@ const Step1 = ( { userInput }, setAge, setHeight, setWeight, setGender ) => {
   userInput.gender = genderInput
 
   const inputs = {
-      age: ageInput,
+      age: age,
       height: height,
       weight: weight,
       gender: gender
@@ -42,7 +42,7 @@ const Step1 = ( { userInput }, setAge, setHeight, setWeight, setGender ) => {
 
 
   useEffect(() => {
-      console.log(inputs, userInput)
+      console.log(userInput)
   }, [inputs])
 
 // const handleChange = (e) => {

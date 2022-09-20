@@ -35,11 +35,20 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
         { label: "step 3", form: <Step3 /> }
     ]
 
-    const { dietLength, weightloss, unit } = userInput
+    const { age, height, gender, weight, unit, activityLevel, dietLength, bmr, tdee, weightloss } = userInput
 
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
   })
+
+  userInput.bmr = (gender === 'female') ? 9.99 * weight + (6.25 * height) - (4.92 * age) - 161 : 9.99 * weight + (6.25 * height) - (4.92 * age) + 5
+    
+
+  const tdeeFormula = (bmr, activityLevel) => {
+    userInput.tdee = Number(bmr) * Number(activityLevel)
+
+    return (userInput.tdee)
+  }
 
   return (
     <React.Fragment>
@@ -61,6 +70,9 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
                     {activeStep === steps.length ? (
                         <Flex px={4} py={4} width="100%" flexDirection="column">
                         <Heading fontSize="xl" textAlign="center">
+                            your bmr is {userInput.bmr}.
+                        </Heading>
+                        <Heading fontSize="xl" textAlign="center">                            
                             you will lose {weightloss}{unit} in {dietLength} days.
                         </Heading>
                         <Button mx="auto" mt={6} size="md" onClick={reset}>

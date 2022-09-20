@@ -29,10 +29,6 @@ import { useState } from 'react';
   
   export default function Form() {
 
-    // const [age, setAge] = useState(0)
-    // const [height, setHeight] = useState(0)
-    // const [weight, setWeight] = useState(0)
-    // const [gender, setGender] = useState('female')
     // const [unit, setUnit] = useState(0)
     // const [activityLevel, setActivityLevel] = useState(0)
     // const [dietLength, setDietLength] = useState(0)
@@ -54,29 +50,17 @@ import { useState } from 'react';
       weightloss: 0
     })
 
-    // interface userInput {
-    //   age: number,
-    //   height: number,
-    //   weight: number,
-    //   activityLevel: number,
-    //   dietLength: number,
-    //   bmr: number,
-    //   tdee: number,
-    // }
+    let { age, height, gender, weight, unit, activityLevel, dietLength, bmr, tdee, weightloss } = userInput
 
     
+    // where I was: where do I want to perform the calculations? and will I have to pass props up from step1 to the stepper to display the values?
+    // and then I just have to repeat updating the object in step2 and 3 .jsx
+    // and then I think it will be done!
 
     return (
     <React.Fragment>
         <Stepper 
-        // weightloss={3} unit='kg' 
-        // dietLength={10} 
-        userInput={userInput} 
-        // setAge={setAge}
-        // setWeight={setWeight}
-        // setHeight={setHeight}
-        // setGender={setGender}
-        // setUserInput={setUserInput}
+        userInput={userInput}
          />
     </React.Fragment>
     );

@@ -18,16 +18,18 @@ import {
 } from "@chakra-ui/react"
 import Form from './Form'
 
-const Step2 = () => {
+const Step2 = ({userInput}) => {
 
     const [activityLevel, setActivityLevel] = useState(0)
+    userInput.activityLevel =  activityLevel
 
     const inputs = {
         activityLevel: activityLevel,
     }
 
     useEffect(() => {
-        console.log(inputs)
+        console.log(activityLevel)
+        console.log(userInput)
     }, [inputs])
 
 

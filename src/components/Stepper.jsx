@@ -30,9 +30,9 @@ import Step3 from './Step3'
 export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender ) => {
 
     const steps = [
-        { label: "step 1", form: <Step1 userInput={userInput} setAge={setAge} setHeight={setHeight} setWeight={setWeight} setGender={setGender} /> }, 
-        { label: "step 2", form: <Step2 /> }, 
-        { label: "step 3", form: <Step3 /> }
+        { label: "step 1", form: <Step1 userInput={userInput} /> }, 
+        { label: "step 2", form: <Step2 userInput={userInput} /> }, 
+        { label: "step 3", form: <Step3 userInput={userInput} /> }
     ]
 
     const { age, height, gender, weight, unit, activityLevel, dietLength, bmr, tdee, weightloss } = userInput
@@ -42,13 +42,8 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
   })
 
   userInput.bmr = (gender === 'female') ? 9.99 * weight + (6.25 * height) - (4.92 * age) - 161 : 9.99 * weight + (6.25 * height) - (4.92 * age) + 5
-    
 
-  const tdeeFormula = (bmr, activityLevel) => {
-    userInput.tdee = Number(bmr) * Number(activityLevel)
-
-    return (userInput.tdee)
-  }
+  userInput.tdee = ((Number(bmr) * Number(activityLevel)) * 10).toFixed(1)
 
   return (
     <React.Fragment>
@@ -71,9 +66,11 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
                         <Flex px={4} py={4} width="100%" flexDirection="column">
                         <Heading fontSize="xl" textAlign="center">
                             your bmr is {userInput.bmr}.
-                        </Heading>
-                        <Heading fontSize="xl" textAlign="center">                            
+                            <br></br>
+                            your tdee is {userInput.tdee}.
+                            <br></br>
                             you will lose {weightloss}{unit} in {dietLength} days.
+                            <br></br>
                         </Heading>
                         <Button mx="auto" mt={6} size="md" onClick={reset}>
                             reset

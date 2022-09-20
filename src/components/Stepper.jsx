@@ -15,11 +15,7 @@ import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
 
-const steps = [
-    { label: "step 1", form: <Step1 userInput={userInput} /> }, 
-    { label: "step 2", form: <Step2 /> }, 
-    { label: "step 3", form: <Step3 /> }
-]
+
 
 // interface userInput {
 //     age: number,
@@ -31,7 +27,13 @@ const steps = [
 //     tdee: number,
 //   }
 
-export const Stepper = ( { userInput} ) => {
+export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender ) => {
+
+    const steps = [
+        { label: "step 1", form: <Step1 userInput={userInput} setAge={setAge} setHeight={setHeight} setWeight={setWeight} setGender={setGender} /> }, 
+        { label: "step 2", form: <Step2 /> }, 
+        { label: "step 3", form: <Step3 /> }
+    ]
 
     const { dietLength, weightloss, unit } = userInput
 

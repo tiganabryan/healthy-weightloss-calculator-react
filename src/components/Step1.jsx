@@ -19,12 +19,13 @@ import Form from './Form'
 
 
 
-const Step1 = ( { userInput } ) => {
+const Step1 = ( { userInput }, setAge, setHeight, setWeight, setGender ) => {
 
-  const [age, setAge] = useState(0)
-  const [height, setHeight] = useState(0)
-  const [weight, setWeight] = useState(0)
-  const [gender, setGender] = useState('female')
+   const { weight, age, height, gender } = userInput
+//   const [age, setAge] = useState(0)
+//   const [height, setHeight] = useState(0)
+//   const [weight, setWeight] = useState(0)
+//   const [gender, setGender] = useState('female')
 
   const inputs = {
       age: age,

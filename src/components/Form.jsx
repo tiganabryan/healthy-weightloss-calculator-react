@@ -29,29 +29,29 @@ import { useState } from 'react';
   
   export default function Form() {
 
-    const [age, setAge] = useState(0)
-    const [height, setHeight] = useState(0)
-    const [weight, setWeight] = useState(0)
-    const [gender, setGender] = useState('female')
-    const [unit, setUnit] = useState(0)
-    const [activityLevel, setActivityLevel] = useState(0)
-    const [dietLength, setDietLength] = useState(0)
-    const [bmr, setBmr] = useState(0)
-    const [tdee, setTdee] = useState(0)
-    const [weightloss, setWeightloss] = useState(0)
+    // const [age, setAge] = useState(0)
+    // const [height, setHeight] = useState(0)
+    // const [weight, setWeight] = useState(0)
+    // const [gender, setGender] = useState('female')
+    // const [unit, setUnit] = useState(0)
+    // const [activityLevel, setActivityLevel] = useState(0)
+    // const [dietLength, setDietLength] = useState(0)
+    // const [bmr, setBmr] = useState(0)
+    // const [tdee, setTdee] = useState(0)
+    // const [weightloss, setWeightloss] = useState(0)
 
 
     const [userInput, setUserInput] = useState({
-      age: age,
-      height: height,
-      gender: gender,
-      weight: weight,
+      age: 0,
+      height: 0,
+      gender: 0,
+      weight: 0,
       unit: 'kg',
-      activityLevel: activityLevel,
-      dietLength: dietLength,
-      bmr: bmr,
-      tdee: tdee,
-      weightloss: weightloss
+      activityLevel: 0,
+      dietLength: 0,
+      bmr: 0,
+      tdee: 0,
+      weightloss: 0
     })
 
     // interface userInput {
@@ -72,10 +72,10 @@ import { useState } from 'react';
         // weightloss={3} unit='kg' 
         // dietLength={10} 
         userInput={userInput} 
-        setAge={setAge}
-        setWeight={setWeight}
-        setHeight={setHeight}
-        setGender={setGender}
+        // setAge={setAge}
+        // setWeight={setWeight}
+        // setHeight={setHeight}
+        // setGender={setGender}
         // setUserInput={setUserInput}
          />
     </React.Fragment>

@@ -7,8 +7,6 @@ import {
     Center,
     Grid,
     GridItem,
-    Container,
-    Box
 } from "@chakra-ui/react"
 import { Step, Steps, useSteps } from "chakra-ui-steps"
 import Step1 from './Step1'
@@ -16,26 +14,15 @@ import Step2 from './Step2'
 import Step3 from './Step3'
 
 
+export const Stepper = ( { userInput} ) => {
 
-// interface userInput {
-//     age: number,
-//     height: number,
-//     weight: number,
-//     activityLevel: number,
-//     dietLength: number,
-//     bmr: number,
-//     tdee: number,
-//   }
-
-export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender ) => {
+    const { age, height, gender, weight, unit, activityLevel, bmr, weightloss } = userInput
 
     const steps = [
         { label: "step 1", form: <Step1 userInput={userInput} /> }, 
         { label: "step 2", form: <Step2 userInput={userInput} /> }, 
         { label: "step 3", form: <Step3 userInput={userInput} /> }
     ]
-
-    const { age, height, gender, weight, unit, activityLevel, dietLength, bmr, tdee, weightloss } = userInput
 
   const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
     initialStep: 0,
@@ -53,10 +40,9 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
     <Grid width="100%" pt={6}>
         <GridItem width="100%">
             <Steps onClickStep={(step) => setStep(step)} activeStep={activeStep}>
-                {steps.map(({ label, form }, index) => (
+                {steps.map(({ label, form }) => (
                 <Step label={label} key={label}>
                     {form}
-                    {/* <Contents /> */}
                 </Step>
                 ))}
             </Steps>
@@ -92,10 +78,9 @@ export const Stepper = ( { userInput}, setAge, setHeight, setWeight, setGender )
                                     prev
                                 </Button>
 
-                                <Button size="md" onClick={nextStep}>
+                                <Button size="md" onClick={nextStep} id="button">
                                     {activeStep === steps.length - 1 ? "finish" : "next"}
                                 </Button>
-                                {/* <p>{age}</p> */}
                             </Flex>
                         </Grid>
                     )}

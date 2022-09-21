@@ -1,25 +1,15 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
 import { 
-    Flex,
-    Heading,
-    Button,
-    Square,
-    Center,
-    Grid,
-    GridItem,
-    Container,
     Box,
     Input,
     Stack,
     Select
 } from "@chakra-ui/react"
-import Form from './Form'
 
 
 
 
-const Step1 = ( { userInput }, setAge, setHeight, setWeight, setGender ) => {
+const Step1 = ( { userInput } ) => {
 
    let { weight, age, height, gender } = userInput
 
@@ -44,14 +34,6 @@ const Step1 = ( { userInput }, setAge, setHeight, setWeight, setGender ) => {
   useEffect(() => {
       console.log(userInput)
   }, [inputs])
-
-// const handleChange = (e) => {
-//     console.log(e.target.value)
-//     setAgeInput(e.target.value)
-//     age = ageInput
-//     console.log(`age object key is ${age}`)
-//     console.log(`what I wrote (input) is ${ageInput}`)
-// }
 
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>

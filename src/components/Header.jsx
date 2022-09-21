@@ -1,21 +1,6 @@
 import React from 'react'
 import {
-    Box,
-    Square,
-    Flex,
-    Stack,
-    Heading,
     Text,
-    Container,
-    Input,
-    Button,
-    SimpleGrid,
-    Avatar,
-    AvatarGroup,
-    useBreakpointValue,
-    IconProps,
-    Icon,
-    Center
   } from '@chakra-ui/react';
 
 const Header = () => {

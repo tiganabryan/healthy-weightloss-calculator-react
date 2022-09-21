@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { 
-    Flex,
-    Heading,
-    Button,
-    Square,
-    Center,
-    Grid,
-    GridItem,
-    Container,
     Text,
     Box,
-    Input,
-    Select,
     RadioGroup,
     Stack,
     Radio
 } from "@chakra-ui/react"
-import Form from './Form'
 
 const Step2 = ({userInput}) => {
 

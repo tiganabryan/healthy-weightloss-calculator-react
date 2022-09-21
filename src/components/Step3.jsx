@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { 
     Text,
     Box,
@@ -10,7 +10,6 @@ import {
     NumberDecrementStepper,
     NumberIncrementStepper,
 } from "@chakra-ui/react"
-import Form from './Form'
 
 const Step3 = ({userInput}) => {
 
@@ -31,32 +30,20 @@ const Step3 = ({userInput}) => {
     }
 
     const [dietLength, setDietLength] = useState(0)
-    const [intake, setIntake] = useState(0)
-
-    const inputs = {
-        dietLength: dietLength,
-    }
 
     userInput.dietLength = dietLength
 
 
-    const [caloriesArray, setCaloriesArray] = useState([0])
     const dietLengthArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
+    const deficitValues = dietLengthArray.map((day) => userInput.tdee - day)
+    const totalDeficit = deficitValues.reduce((previous, current) => previous + current, deficitValues[0])
+    userInput.weightloss = (totalDeficit / 7716.1805).toFixed(2)
 
-    useEffect(() => {
-        console.log(`array of diet days: ${dietLengthArray}`)
-    }, [dietLengthArray])
 
-    
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-    }
-    
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>
-        <form onSubmit={handleSubmit}>
         <Stack spacing={3}>
             <label>diet length (days)</label>
                 <Stack spacing={5} >
@@ -81,9 +68,6 @@ const Step3 = ({userInput}) => {
                     onChange={(e) => {
                         dietLengthArray[day-1] = Number(e.target.value)
                         console.log(dietLengthArray)
-                        // console.log(day.key)
-                        // dietLength[day] = Number(e.target.value)
-                        // setCaloriesArray([...caloriesArray, Number(e.target.value)])
                     }} size='lg' />
                 )
                 }) 
@@ -93,9 +77,6 @@ const Step3 = ({userInput}) => {
 
         {!dietLength && <Text padding='1rem 0rem' marginTop='-1rem'>at least one day must be given for the calculator to work.</Text>}
 
-
-        {/* <input type="submit" value='calories array' /> */}
-        </form>
     </Box>
   )
 }

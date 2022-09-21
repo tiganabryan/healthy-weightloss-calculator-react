@@ -10,7 +10,7 @@ weight loss calculator websites give you one intake option for the entirety of y
 
 !(src/img/screenshot.png "screenshot of the calculator")
 
-this was created with Jean Verster's Chakra UI Steps components (https://github.com/jeanverster/chakra-ui-steps).
+this was created with Jean Verster's Chakra UI Steps component (https://github.com/jeanverster/chakra-ui-steps).
 
 # features
 - multi step form
@@ -24,9 +24,10 @@ this was created with Jean Verster's Chakra UI Steps components (https://github.
 - deficit: the difference between the calories consumed and the tdee, this is what causes weight loss
 
 # coming soon
-- form validation
-- ability to switch to imperial input
+- additional breakpoints
 - redux toolkit
+- form validation
+- option to switch to imperial
 - option to email diet intakes to user
 
 # report bugs

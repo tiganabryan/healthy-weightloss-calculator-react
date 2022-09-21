@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/healthy-weightloss-calculator-react/static/js/main.6acce08f.js",
+    "main.js": "/healthy-weightloss-calculator-react/static/js/main.cbb3c7d0.js",
     "static/js/787.28cb0dcd.chunk.js": "/healthy-weightloss-calculator-react/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/healthy-weightloss-calculator-react/index.html",
-    "main.6acce08f.js.map": "/healthy-weightloss-calculator-react/static/js/main.6acce08f.js.map",
+    "main.cbb3c7d0.js.map": "/healthy-weightloss-calculator-react/static/js/main.cbb3c7d0.js.map",
     "787.28cb0dcd.chunk.js.map": "/healthy-weightloss-calculator-react/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.6acce08f.js"
+    "static/js/main.cbb3c7d0.js"
   ]
 }

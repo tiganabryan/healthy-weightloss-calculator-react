@@ -39,7 +39,7 @@ export const Stepper = ( { userInput} ) => {
     <React.Fragment>
     <Grid width="100%" pt={6}>
         <GridItem width="100%">
-            <Steps onClickStep={(step) => setStep(step)} activeStep={activeStep}>
+            <Steps onClickStep={(step) => setStep(step)} activeStep={activeStep} mb={{base:'-2rem', xs: '0rem', md: '1rem', lg: '2rem'}}>
                 {steps.map(({ label, form }) => (
                 <Step label={label} key={label}>
                     {form}

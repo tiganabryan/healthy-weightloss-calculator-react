@@ -19,7 +19,9 @@ export const App = () => (
 
   <ChakraProvider theme={theme}>
     <Center w='100%' h='100%'>
-      <Stack spacing={3} w='40%' pt={5}>
+      <Stack spacing={3} 
+      w={{ base: '70%', md: '40%', lg: '40%' }} 
+      pt={5}>
 
         <Header />
         <Form />

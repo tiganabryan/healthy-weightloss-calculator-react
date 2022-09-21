@@ -17,6 +17,7 @@ this was created with Jean Verster's Chakra UI Steps component (https://github.c
 - multi step form
 - dynamic number of calorie input fields
 - male and female weightloss calculations from input
+- responsive design
 - react + chakra UI
 
 # background info
@@ -25,7 +26,6 @@ this was created with Jean Verster's Chakra UI Steps component (https://github.c
 - deficit: the difference between the calories consumed and the tdee, this is what causes weight loss
 
 # coming soon
-- additional breakpoint styling
 - redux toolkit
 - form validation
 - option to switch to imperial

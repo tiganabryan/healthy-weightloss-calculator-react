@@ -37,7 +37,7 @@ find a bug? please [create an issue](https://github.com/tiganabryan/healthy-weig
 contributions are always welcome! here's how:
 
 - fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
-- clone to your machine git clone https://github.com/YOUR_USERNAME/healthy-weightloss-calculator.git
+- clone to your machine git clone https://github.com/YOUR_USERNAME/healthy-weightloss-calculator-react.git
 - make your changes
 - create a pull request
 

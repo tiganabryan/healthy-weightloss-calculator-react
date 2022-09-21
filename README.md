@@ -24,7 +24,7 @@ this was created with Jean Verster's Chakra UI Steps component (https://github.c
 - deficit: the difference between the calories consumed and the tdee, this is what causes weight loss
 
 # coming soon
-- additional breakpoints
+- additional breakpoint styling
 - redux toolkit
 - form validation
 - option to switch to imperial

@@ -53,7 +53,7 @@ export const Stepper = ( { userInput} ) => {
                 <Square>
                     {activeStep === steps.length ? (
                         <Flex px={4} py={4} width="100%" flexDirection="column">
-                        <Heading fontSize="xl" textAlign="center">
+                        <Heading fontSize="xl" textAlign="center" pt={{base: '-1rem', md: '1.5rem', lg: '1.5rem'}}>
                             your bmr is {userInput.bmr}
                             <br></br>
                             your tdee is {userInput.tdee}

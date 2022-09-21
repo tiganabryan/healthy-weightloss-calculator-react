@@ -1,29 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { 
-    Flex,
-    Heading,
-    Button,
-    Square,
-    Center,
-    Grid,
-    GridItem,
-    Container,
     Text,
     Box,
     Input,
-    Select,
-    RadioGroup,
     Stack,
-    Radio,
     NumberInput,
     NumberInputField,
     NumberInputStepper,
     NumberDecrementStepper,
     NumberIncrementStepper,
-    useNumberInput
 } from "@chakra-ui/react"
 import Form from './Form'
-import DatePicker from 'react-date-picker'
 
 const Step3 = ({userInput}) => {
 
@@ -53,23 +40,14 @@ const Step3 = ({userInput}) => {
     userInput.dietLength = dietLength
 
 
-    const [caloriesArray, setCaloriesArray] = useState(0)
+    const [caloriesArray, setCaloriesArray] = useState([0])
     const dietLengthArray = Array.from({length: dietLength}, (_, i) => i + 1)
 
 
     useEffect(() => {
-        console.log(`diet length: ${dietLength}`, userInput)
-    }, [inputs])
-
-
-    useEffect(() => {
         console.log(`array of diet days: ${dietLengthArray}`)
-    }, [dietLengthArray, dietLength])
+    }, [dietLengthArray])
 
-    useEffect(() => {
-        console.log(caloriesArray)
-    }, [caloriesArray])
-    
     
 
     const handleSubmit = (event) => {
@@ -95,12 +73,17 @@ const Step3 = ({userInput}) => {
 
         <div style={gridStyle} >
 
-            {dietLength > 0 && dietLengthArray.map((day) => {
+            {dietLength > 0 && 
+            
+            dietLengthArray.map((day) => {
                 return (
                     <Input key={day} type="number" placeholder={`day ${day}`} style={intakeInputStyle}  
                     onChange={(e) => {
+                        dietLengthArray[day-1] = Number(e.target.value)
+                        console.log(dietLengthArray)
+                        // console.log(day.key)
+                        // dietLength[day] = Number(e.target.value)
                         // setCaloriesArray([...caloriesArray, Number(e.target.value)])
-                        // collect input on submit instead
                     }} size='lg' />
                 )
                 }) 

@@ -8,8 +8,6 @@ import { StepsStyleConfig as Steps } from 'chakra-ui-steps';
 import Header from './components/Header';
 import Form from './components/Form'
 
-const log = console.log
-
 const theme = extendTheme({
   components: {
     Steps,

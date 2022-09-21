@@ -11,8 +11,6 @@ import {
 
 const Step1 = ( { userInput } ) => {
 
-   let { weight, age, height, gender } = userInput
-
   const [ageInput, setAgeInput] = useState(0)
   const [heightInput, setHeightInput] = useState(0)
   const [weightInput, setWeightInput] = useState(0)

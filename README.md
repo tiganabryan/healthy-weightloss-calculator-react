@@ -8,7 +8,7 @@
 the varied intake weight loss calculator allows you to input multiple intakes for safe weight loss.
 weight loss calculator websites give you one intake option for the entirety of your weight loss journey -- this isn't healthy or realistic. your resting intake and active intakes must fluctuate so you have enough energy to function.
 
-![src/img/screenshot.png "screenshot of the calculator"]
+ ![screenshot of healthy weightloss calculator with stepper ui](src/img/screenshot.png)
 
 this was created with Jean Verster's Chakra UI Steps component (https://github.com/jeanverster/chakra-ui-steps).
 

@@ -4,6 +4,7 @@
 ![Author](https://img.shields.io/badge/author-%40tiganabryan-blue.svg)
 [![Twitter](https://img.shields.io/twitter/url?color=ff69b4&style=social&url=https%3A%2F%2Ftiganabryan.github.io%2Fvaried-intake-weightloss%2Findex.html)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.github.com%2Ftiganabryan%2Fvaried-intake-weightloss&via=tiganarox&text=Wow.%20This%20weight%20loss%20calculator%20lets%20you%20use%20multiple%20calorie%20intakes.)
 
+## [try it yourself here](https://tiganabryan.github.io/healthy-weightloss-calculator-react/)
 
 the varied intake weight loss calculator allows you to input multiple intakes for safe weight loss.
 weight loss calculator websites give you one intake option for the entirety of your weight loss journey -- this isn't healthy or realistic. your resting intake and active intakes must fluctuate so you have enough energy to function.

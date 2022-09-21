@@ -42,14 +42,17 @@ contributions are always welcome! here's how:
 
 # changelogs
 
-### sept 20th, 2022
+## sept 20th, 2022
   - **brand new react version**
+
+
+### previous html/css/js/scss version
 ### june 6th, 2022
-  - **male and female input version (pure js)**
+  - **male and female input**
 ### may 24, 2022
-  - **female-input-only version (pure js)**
+  - **female-input-only**
 ### may 23, 2022
-  - **initial release bootstrap-only version (pure js)**
+  - **initial release bootstrap-only**
 
 # license
 [MIT License](http://opensource.org/licenses/MIT)

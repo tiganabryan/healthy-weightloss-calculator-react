@@ -23,18 +23,6 @@ const Step1 = ( { userInput } ) => {
   userInput.weight = weightInput
   userInput.gender = genderInput
 
-  const inputs = {
-      age: age,
-      height: height,
-      weight: weight,
-      gender: gender
-  }
-
-
-  useEffect(() => {
-      console.log(userInput)
-  }, [inputs])
-
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>
         <form>

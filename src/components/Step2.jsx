@@ -12,15 +12,6 @@ const Step2 = ({userInput}) => {
     const [activityLevel, setActivityLevel] = useState(0)
     userInput.activityLevel =  activityLevel
 
-    const inputs = {
-        activityLevel: activityLevel,
-    }
-
-    useEffect(() => {
-        console.log(activityLevel)
-        console.log(userInput)
-    }, [inputs])
-
 
   return (
     <Box w='100%' p={4} mt={4} borderRadius={12} borderColor='navy' borderWidth={1}>

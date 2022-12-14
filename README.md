@@ -48,7 +48,7 @@ contributions are always welcome! here's how:
   - **brand new react version**
 
 
-### previous html/css/js/scss version
+### [previous html/css/js/scss version](https://github.com/tiganabryan/varied-intake-calculator)
 ### june 6th, 2022
   - **male and female input**
 ### may 24, 2022
